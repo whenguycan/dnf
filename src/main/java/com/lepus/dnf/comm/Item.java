@@ -1,68 +1,50 @@
 package com.lepus.dnf.comm;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  */
 public class Item {
 
-    public static final int DEFAULT_ATTRS_LEN = 13;
+	private Item(){
 
-    public static Item NEW(){
-		return new Item();
-    }
+	}
 
-    public static Item NEW(String name){
-        Item item = Item.NEW();
-        item.name = name;
-        return item;
-    }
+	public static Item init(String name) {
+		Item item = new Item();
+		item.name = name;
+		for (AttrType type : AttrType.values()) {
+			item.attrMap.put(type, 0);
+		}
+		return item;
+	}
 
-    private String name;
+	private String name;
 
-    private int[] attrs = new int[DEFAULT_ATTRS_LEN];
+	private Map<AttrType, Integer> attrMap = new HashMap<>();
 
-    /**
-     * 0/inte,1/intePrec,2/yell,3/whit,4/crit
-     * 5/yellAdd,6/whitAdd,7/critAdd,8/stre,9/inde
-     * 10/thre,11/fina,12/skil
-     */
-    public Item setAttr(int index, int attr){
-        if(index < 0 || index > DEFAULT_ATTRS_LEN) {
-            System.out.println("index out of bounds");
-            return this;
-        }
-        if(attr < 0) {
-            System.out.println("attr is negative");
-            return this;
-        }
-        attrs[index] = attr;
-        return this;
-    }
+	public Item setAttr(AttrType type, int attr) {
+		attrMap.put(type, attr);
+		return this;
+	}
 
-    public Item addAttr(int index, int attr){
-	    if(index < 0 || index > DEFAULT_ATTRS_LEN) {
-		    System.out.println("index out of bounds");
-		    return this;
-	    }
-	    if(attr < 0) {
-		    System.out.println("attr is negative");
-		    return this;
-	    }
-	    attrs[index] += attr;
-	    return this;
-    }
+	public Item addAttr(AttrType type, int attr) {
+		attrMap.put(type, attrMap.get(type) + attr);
+		return this;
+	}
 
-    public int getAttr(int index){
-        if(index < 0 || index > DEFAULT_ATTRS_LEN) {
-            System.out.println("index out of bounds");
-            return 0;
-        }
-        return attrs[index];
-    }
+	public int getAttr(AttrType type) {
+		return attrMap.get(type);
+	}
 
-    public double getAttrDouble(int index){
-    	int attr = getAttr(index);
-    	return attr * 1d;
-    }
+	public double getAttrDouble(AttrType type) {
+		int attr = getAttr(type);
+		return attr * 1d;
+	}
 
+	public String toString() {
+		return this.name;
+	}
 }

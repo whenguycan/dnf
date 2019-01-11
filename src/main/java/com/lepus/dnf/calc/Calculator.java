@@ -1,6 +1,6 @@
 package com.lepus.dnf.calc;
 
-import com.lepus.dnf.comm.ArrayUtils;
+import com.lepus.dnf.comm.AttrType;
 import com.lepus.dnf.comm.Item;
 
 public class Calculator {
@@ -10,36 +10,33 @@ public class Calculator {
 	public static double calc(Item... items) {
 		if (items == null || items.length == 0)
 			return 1;
-		Item x = new Item();
+		Item x = Item.init("ALL");
 		double y = DEFAULT_DAMAGE;
 		for (Item item : items) {
-			for (int i = 0, len = Item.DEFAULT_ATTRS_LEN; i < len; i++) {
-				int attr = item.getAttr(i);
-				if (attr > 0) {
-					if (ArrayUtils.search(new int[]{0, 1, 3, 5, 6, 7, 8, 9, 10, 11}, i) != -1) {
-						x.addAttr(i, attr);
-					} else if (i == 2 || i == 4) {
-						if (attr > x.getAttr(i))
-							x.setAttr(i, attr);
-					} else if (i == 12) {
-						int old = x.getAttr(i);
-						if (old == 0) {
-							x.setAttr(i, attr);
-						} else {
-							x.setAttr(i, (100 + old) * (100 + attr)  / 100 - 100);
-						}
-					}
+			for (AttrType type : AttrType.values()) {
+				int attr = item.getAttr(type);
+				if (type == AttrType.Yell || type == AttrType.Crit) {
+					if (attr > x.getAttr(type))
+						x.setAttr(type, attr);
+				} else if (type == AttrType.Skil) {
+					int old = x.getAttr(type);
+					if (old == 0)
+						x.setAttr(type, attr);
+					else
+						x.setAttr(type, (100 + old) * (100 + attr) / 100 - 100);
+				} else {
+					x.addAttr(type, attr);
 				}
 			}
 		}
-		y *= 1 + x.getAttrDouble(0) * (1 + x.getAttrDouble(1) / 100) / 250;
-		y *= 1 + (x.getAttrDouble(2) + x.getAttrDouble(5)) / 100;
-		y *= 1 + (x.getAttrDouble(3) + x.getAttrDouble(6) * (1 + x.getAttrDouble(8) / 220)) / 100;
-		y *= 1 + (x.getAttrDouble(4) + x.getAttrDouble(7)) / 100;
-		y *= 1 + (x.getAttrDouble(8) / 220);
-		y *= x.getAttrDouble(9) * (1 + x.getAttrDouble(10) / 100) / 1000;
-		y *= 1 + x.getAttrDouble(11) / 100;
-		y *= 1 + x.getAttrDouble(12) / 100;
+		y *= 1 + x.getAttrDouble(AttrType.Inte) * (1 + x.getAttrDouble(AttrType.IntePrec) / 100) / 250;
+		y *= 1 + (x.getAttrDouble(AttrType.Yell) + x.getAttrDouble(AttrType.YellAdd)) / 100;
+		y *= 1 + (x.getAttrDouble(AttrType.Whit) + x.getAttrDouble(AttrType.WhitAdd) * (1 + x.getAttrDouble(AttrType.Stre) / 220)) / 100;
+		y *= 1 + (x.getAttrDouble(AttrType.Crit) + x.getAttrDouble(AttrType.CritAdd)) / 100;
+		y *= 1 + (x.getAttrDouble(AttrType.Stre) / 220);
+		y *= x.getAttrDouble(AttrType.Inde) * (1 + x.getAttrDouble(AttrType.Thre) / 100) / 1000;
+		y *= 1 + x.getAttrDouble(AttrType.Fina) / 100;
+		y *= 1 + x.getAttrDouble(AttrType.Skil) / 100;
 		return y;
 	}
 
