@@ -8,17 +8,19 @@ import java.util.Map;
  */
 public class Item {
 
-	private Item(){
-
+	private Item(String name) {
+		this.name = name;
+		for (AttrType type : AttrType.values()) {
+			this.attrMap.put(type, 0);
+		}
 	}
 
-	public static Item init(String name) {
-		Item item = new Item();
-		item.name = name;
-		for (AttrType type : AttrType.values()) {
-			item.attrMap.put(type, 0);
-		}
-		return item;
+	public static Item NEW() {
+		return new Item(null);
+	}
+
+	public static Item NEW(String name) {
+		return new Item(name);
 	}
 
 	private String name;
@@ -27,6 +29,23 @@ public class Item {
 
 	public Item setAttr(AttrType type, int attr) {
 		attrMap.put(type, attr);
+		return this;
+	}
+
+	public Item setAttr(Object... attrs) {
+		if (attrs != null && attrs.length != 0 && attrs.length % 2 == 0) {
+			try {
+				for (int i = 0, len = attrs.length / 2; i < len; i++) {
+					Object k = attrs[i * 2];
+					AttrType type = (AttrType) k;
+					Object v = attrs[i * 2 + 1];
+					int attr = (int) v;
+					attrMap.put(type, attr);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		return this;
 	}
 
@@ -46,5 +65,12 @@ public class Item {
 
 	public String toString() {
 		return this.name;
+	}
+
+	public void show() {
+		for (AttrType type : AttrType.values()) {
+			String name = type.name();
+			System.out.println(name + ": " + attrMap.get(type));
+		}
 	}
 }

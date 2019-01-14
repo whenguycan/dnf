@@ -1,4 +1,11 @@
 package com.lepus.dnf.part;
 
-public class Xie {
+import com.lepus.dnf.comm.AttrType;
+import com.lepus.dnf.comm.Item;
+
+public interface Xie {
+
+	Item MoZhan = Item.NEW().setAttr(AttrType.Inte, 113, AttrType.Thre, 8);
+	Item WanShi = Item.NEW().setAttr(AttrType.Inte, 98, AttrType.Stre, 22, AttrType.IntePrec, 5);
+
 }

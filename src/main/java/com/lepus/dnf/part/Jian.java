@@ -3,9 +3,9 @@ package com.lepus.dnf.part;
 import com.lepus.dnf.comm.AttrType;
 import com.lepus.dnf.comm.Item;
 
-public class Jian {
+public interface Jian {
 
-	public static Item MoZhan = Item.init("魔战肩").setAttr(AttrType.Inte, 50);
-	public static Item WanShi = Item.init("万世肩").setAttr(AttrType.Inte, 50);
+	Item MoZhan = Item.NEW().setAttr(AttrType.Inte, 34);
+	Item WanShi = Item.NEW().setAttr(AttrType.Inte, 106, AttrType.Stre, 22, AttrType.Fina, 5);
 
 }

@@ -1,4 +1,11 @@
 package com.lepus.dnf.part;
 
-public class ShouZhuo {
+import com.lepus.dnf.comm.AttrType;
+import com.lepus.dnf.comm.Item;
+
+public interface ShouZhuo {
+
+	Item WuJin = Item.NEW().setAttr(AttrType.Yell, 30);
+	Item QiMingXing = Item.NEW().setAttr(AttrType.Skil, 15);
+
 }
