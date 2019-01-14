@@ -31,6 +31,7 @@ public class Entrance {
 		calcMoZhan(role, you);
 		calcWanShi(role, you);
 		calcChaoDaLu(role, you);
+		calcQiZongZui(role, you);
 
 	}
 
@@ -66,6 +67,18 @@ public class Entrance {
 		all.add(Yao.ChaoDaLu);
 		all.add(Xie.ChaoDaLu);
 		all.add(Suit.ChaoDaLu);
+		double r = Calculator.calc(role, all);
+		System.out.println(r);
+	}
+
+	static void calcQiZongZui(Item role, List<Item> you){
+		List<Item> all = new ArrayList<>(you);
+		all.add(Jian.QiZongZui);
+		all.add(Xiong.QiZongZui);
+		all.add(Tui.QiZongZui);
+		all.add(Yao.QiZongZui);
+		all.add(Xie.QiZongZui);
+		all.add(Suit.QiZongZui);
 		double r = Calculator.calc(role, all);
 		System.out.println(r);
 	}

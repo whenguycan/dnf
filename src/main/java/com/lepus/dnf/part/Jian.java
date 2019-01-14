@@ -8,5 +8,6 @@ public interface Jian {
 	Item MoZhan = Item.NEW().setAttr(AttrType.Inte, 34);
 	Item WanShi = Item.NEW().setAttr(AttrType.Inte, 106, AttrType.Stre, 22, AttrType.Fina, 5);
 	Item ChaoDaLu = Item.NEW().setAttr(AttrType.Inte, 29, AttrType.CritAdd, 18);
+	Item QiZongZui = Item.NEW().setAttr(AttrType.Inte, 35, AttrType.Whit, 15);
 
 }
