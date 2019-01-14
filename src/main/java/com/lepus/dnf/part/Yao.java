@@ -7,5 +7,6 @@ public interface Yao {
 
 	Item MoZhan = Item.NEW().setAttr(AttrType.Inte, 25);
 	Item WanShi = Item.NEW().setAttr(AttrType.Inte, 98, AttrType.Stre, 22, AttrType.Thre, 5);
+	Item ChaoDaLu = Item.NEW().setAttr(AttrType.Inte, 21, AttrType.IntePrec, 18);
 
 }

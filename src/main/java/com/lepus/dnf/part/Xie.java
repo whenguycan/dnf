@@ -7,5 +7,6 @@ public interface Xie {
 
 	Item MoZhan = Item.NEW().setAttr(AttrType.Inte, 113, AttrType.Thre, 8);
 	Item WanShi = Item.NEW().setAttr(AttrType.Inte, 98, AttrType.Stre, 22, AttrType.IntePrec, 5);
+	Item ChaoDaLu = Item.NEW().setAttr(AttrType.Inte, 21, AttrType.Thre, 18);
 
 }

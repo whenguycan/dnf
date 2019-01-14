@@ -5,6 +5,6 @@ import com.lepus.dnf.comm.Item;
 
 public interface ChengHao {
 
-	Item LongZhiTiaoZhan = Item.NEW().setAttr(AttrType.Inte, 60, AttrType.Inde, 50, AttrType.Thre, 15, AttrType.Whit, 10);
+	Item LongZhiTiaoZhan = Item.NEW().setAttr(AttrType.Inte, 60, AttrType.Inde, 50, AttrType.Stre, 15, AttrType.Whit, 10);
 
 }

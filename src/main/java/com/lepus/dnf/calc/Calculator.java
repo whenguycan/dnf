@@ -8,6 +8,7 @@ import java.util.Collection;
 public class Calculator {
 
 	public static final int DEFAULT_DAMAGE = 1;
+	public static boolean SHOW_ITEM_DETAIL = true;
 
 	public static double calc(Item item, Collection<Item> items){
 		if(item == null && (items == null || items.isEmpty()))
@@ -46,7 +47,8 @@ public class Calculator {
 		y *= x.getAttrDouble(AttrType.Inde) * (1 + x.getAttrDouble(AttrType.Thre) / 100) / 1000;
 		y *= 1 + x.getAttrDouble(AttrType.Fina) / 100;
 		y *= 1 + x.getAttrDouble(AttrType.Skil) / 100;
-		x.show();
+		if(SHOW_ITEM_DETAIL)
+			x.show();
 		return y;
 	}
 
