@@ -1,5 +1,7 @@
 package com.lepus.dnf.comm;
 
+import com.lepus.dnf.calc.Calculator;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,16 +14,18 @@ public class Nodes {
 	static class Node{
 		String name;
 		double damage;
-		Node(String name, double damage){
+		ItemHolder holder;
+		Node(String name, ItemHolder holder){
 			this.name = name;
-			this.damage = damage;
+			this.holder = holder;
+			this.damage = Calculator.calc(holder.items());
 		}
 	}
 
 	List<Node> list = new ArrayList<>();
 
-	public Nodes addNode(String name, double damage){
-		list.add(new Node(name, damage));
+	public Nodes addNode(String name, ItemHolder holder){
+		list.add(new Node(name, holder));
 		return this;
 	}
 

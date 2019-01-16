@@ -17,7 +17,7 @@ import java.util.Map;
 public class Entrance {
 
 	public static void main(String[] args) {
-		Calculator.SHOW_ITEM_DETAIL = true;
+		Calculator.SHOW_ITEM_DETAIL = false;
 		calc();
 	}
 
@@ -94,10 +94,8 @@ public class Entrance {
 		XianZhe.add(Suit.XianZhe);
 
 		Nodes.NEW()
-				.addNode("XianZhe_An_MoZhan", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(HaiBoLunAn).add(XianZhe).add(MoZhan).items()))
-				.addNode("XianZhe_An_WanShi", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(HaiBoLunAn).add(XianZhe).add(WanShi).items()))
-				.addNode("XianZhe_An_ChaoDaLu", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(HaiBoLunAn).add(XianZhe).add(ChaoDaLu).items()))
-				.addNode("XianZhe_An_QiZongZui", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(HaiBoLunAn).add(XianZhe).add(QiZongZui).items()))
+				.addNode("MoZhan_HaiAn", ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(MoZhan).add(HaiBoLunAn).add(shouShi))
+				.addNode("QiZongZui_HaiAn", ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(QiZongZui).add(HaiBoLunAn).add(shouShi))
 				.sort()
 				.print();
 
