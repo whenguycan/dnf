@@ -7,6 +7,7 @@ import com.lepus.dnf.comm.ItemHolder;
 import com.lepus.dnf.comm.Nodes;
 import com.lepus.dnf.part.*;
 import com.lepus.dnf.suit.Suit;
+import org.w3c.dom.Attr;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -16,7 +17,7 @@ import java.util.Map;
 public class Entrance {
 
 	public static void main(String[] args) {
-		Calculator.SHOW_ITEM_DETAIL = false;
+		Calculator.SHOW_ITEM_DETAIL = true;
 		calc();
 	}
 
@@ -30,6 +31,18 @@ public class Entrance {
 		sanCao.add(SanCao.Zuo.HuangJinBei);
 		sanCao.add(SanCao.You.HeiBai);
 		sanCao.add(SanCao.ErHuan.YuanDing);
+
+		List<Item> HaiBoLunAn = new ArrayList<>();
+		HaiBoLunAn.add(SanCao.Zuo.HaiBoLun);
+		HaiBoLunAn.add(SanCao.You.HaiBoLun);
+		HaiBoLunAn.add(SanCao.ErHuan.HaiBoLun);
+		HaiBoLunAn.add(Suit.HaiBoLunAn);
+
+		List<Item> HaiBoLunGuang = new ArrayList<>();
+		HaiBoLunAn.add(SanCao.Zuo.HaiBoLun);
+		HaiBoLunAn.add(SanCao.You.HaiBoLun);
+		HaiBoLunAn.add(SanCao.ErHuan.HaiBoLun);
+		HaiBoLunAn.add(Suit.HaiBoLunGuang);
 
 		List<Item> shouShi = new ArrayList<>();
 		shouShi.add(ShouShi.ShouZhuo.WuJin);
@@ -68,11 +81,23 @@ public class Entrance {
 		QiZongZui.add(ZhuangBei.Xie.QiZongZui);
 		QiZongZui.add(Suit.QiZongZui);
 
+		List<Item> Meng = new ArrayList<>();
+		Meng.add(ShouShi.XiangLian.Meng);
+		Meng.add(ShouShi.JieZhi.Meng);
+		Meng.add(ShouShi.ShouZhuo.Meng);
+		Meng.add(Suit.Meng);
+
+		List<Item> XianZhe = new ArrayList<>();
+		XianZhe.add(ShouShi.XiangLian.XianZhe);
+		XianZhe.add(ShouShi.JieZhi.XianZhe);
+		XianZhe.add(ShouShi.ShouZhuo.XianZhe);
+		XianZhe.add(Suit.XianZhe);
+
 		Nodes.NEW()
-				.addNode("XianYou_MoZhan", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(sanCao).add(shouShi).add(MoZhan).items()))
-				.addNode("XianYou_WanShi", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(sanCao).add(shouShi).add(WanShi).items()))
-				.addNode("XianYou_ChaoDaLu", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(sanCao).add(shouShi).add(ChaoDaLu).items()))
-				.addNode("XianYou_QiZongZui", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(sanCao).add(shouShi).add(QiZongZui).items()))
+				.addNode("XianZhe_An_MoZhan", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(HaiBoLunAn).add(XianZhe).add(MoZhan).items()))
+				.addNode("XianZhe_An_WanShi", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(HaiBoLunAn).add(XianZhe).add(WanShi).items()))
+				.addNode("XianZhe_An_ChaoDaLu", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(HaiBoLunAn).add(XianZhe).add(ChaoDaLu).items()))
+				.addNode("XianZhe_An_QiZongZui", Calculator.calc(ItemHolder.NEW().add(XiaZi).add(WuQiChengHao).add(HaiBoLunAn).add(XianZhe).add(QiZongZui).items()))
 				.sort()
 				.print();
 

@@ -72,5 +72,6 @@ public class Item {
 			String name = type.name();
 			System.out.println(name + ": " + attrMap.get(type));
 		}
+		System.out.println("----------------");
 	}
 }
