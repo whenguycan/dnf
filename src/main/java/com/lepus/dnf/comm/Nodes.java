@@ -18,11 +18,18 @@ public class Nodes {
 		Node(String name, ItemHolder holder){
 			this.name = name;
 			this.holder = holder;
-			this.damage = Calculator.calc(holder.items());
+			this.damage = Calculator.calc(holder.getArray());
 		}
 	}
 
 	List<Node> list = new ArrayList<>();
+
+	boolean printItemDetail = false;
+
+	public Nodes printItemDetail(boolean print){
+		this.printItemDetail = print;
+		return this;
+	}
 
 	public Nodes addNode(String name, ItemHolder holder){
 		list.add(new Node(name, holder));
@@ -39,6 +46,8 @@ public class Nodes {
 			System.out.println("empty");
 		else
 			for(Node node : list){
+				if(printItemDetail)
+					Item.sum(node.holder.items).show();
 				System.out.println(node.name + ": " + node.damage);
 			}
 	}

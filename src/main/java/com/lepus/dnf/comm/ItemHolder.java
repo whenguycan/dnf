@@ -27,7 +27,7 @@ public class ItemHolder {
 		return this;
 	}
 
-	public Item[] items() {
+	public Item[] getArray() {
 		return this.items.toArray(new Item[0]);
 	}
 
