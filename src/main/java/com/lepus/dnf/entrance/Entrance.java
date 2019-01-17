@@ -27,23 +27,7 @@ public class Entrance {
         role.add(ChengHao.LongZhiTiaoZhan);
 
         Nodes.NEW()
-                .addNode("QiZongZui_An_Meng", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunAn()).add(getMeng()))
-                .addNode("QiZongZui_Guang_Meng", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunGuang()).add(getMeng()))
-                .addNode("QiZongZui_XuHuan_Meng", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getXuHuan()).add(getMeng()))
 
-                .addNode("ChaoDaLu_An_Meng", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getHaiBoLunAn()).add(getMeng()))
-                .addNode("ChaoDaLu_Guang_Meng", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getHaiBoLunGuang()).add(getMeng()))
-                .addNode("ChaoDaLu_XuHuan_Meng", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getXuHuan()).add(getMeng()))
-
-                .addNode("WanShi_An_Meng", ItemHolder.NEW().add(role).add(getWanShi()).add(getHaiBoLunAn()).add(getMeng()))
-                .addNode("WanShi_Guang_Meng", ItemHolder.NEW().add(role).add(getWanShi()).add(getHaiBoLunGuang()).add(getMeng()))
-                .addNode("WanShi_XuHuan_Meng", ItemHolder.NEW().add(role).add(getWanShi()).add(getXuHuan()).add(getMeng()))
-
-                .addNode("MoZhan_An_Meng", ItemHolder.NEW().add(role).add(getMoZhan()).add(getHaiBoLunAn()).add(getMeng()))
-                .addNode("MoZhan_Guang_Meng", ItemHolder.NEW().add(role).add(getMoZhan()).add(getHaiBoLunGuang()).add(getMeng()))
-                .addNode("MoZhan_XuHuan_Meng", ItemHolder.NEW().add(role).add(getMoZhan()).add(getXuHuan()).add(getMeng()))
-
-                .addNode("MoZhan_SanCao_ShouShi", ItemHolder.NEW().add(role).add(getMoZhan()).add(getSanCao()).add(getShouShi()))
                 .sort()
                 .print();
 

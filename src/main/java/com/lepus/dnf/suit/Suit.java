@@ -17,5 +17,6 @@ public interface Suit {
 	Item XianZhe = Item.NEW().setAttr(AttrType.CritAdd, 35);
 	Item XuHuan = Item.NEW().setAttr(AttrType.Whit, 10, AttrType.IntePrec, 20);
 	Item ZhengYi = Item.NEW().setAttr(AttrType.Skil, 10, AttrType.CritAdd, 24);
+	Item HaLinQing = Item.NEW().setAttr(AttrType.CritAdd, 25, AttrType.Fina, 40);
 
 }
