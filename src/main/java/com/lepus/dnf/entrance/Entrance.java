@@ -32,15 +32,15 @@ public class Entrance {
                 .addNode("苍穹板_海伯伦光_梦", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getHaiBoLunGuang()).add(getMeng()))
                 .addNode("苍穹板_海伯伦暗_梦", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getHaiBoLunAn()).add(getMeng()))
 
-                .addNode("哈林板_虚幻_梦", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getXuHuan()).add(getMeng()))
-                .addNode("苍穹板_虚幻_梦", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getXuHuan()).add(getMeng()))
-                .addNode("超大陆_虚幻_梦", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getXuHuan()).add(getMeng()))
-                .addNode("七宗罪_虚幻_梦", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getXuHuan()).add(getMeng()))
-
                 .addNode("超大陆_海伯伦光_梦", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getHaiBoLunGuang()).add(getMeng()))
                 .addNode("超大陆_海伯伦暗_梦", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getHaiBoLunAn()).add(getMeng()))
                 .addNode("七宗罪_海伯伦光_梦", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunGuang()).add(getMeng()))
                 .addNode("七宗罪_海伯伦暗_梦", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunAn()).add(getMeng()))
+
+                .addNode("哈林板_虚幻_梦", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getXuHuan()).add(getMeng()))
+                .addNode("苍穹板_虚幻_梦", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getXuHuan()).add(getMeng()))
+                .addNode("超大陆_虚幻_梦", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getXuHuan()).add(getMeng()))
+                .addNode("七宗罪_虚幻_梦", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getXuHuan()).add(getMeng()))
                 .sort()
                 .print();
 

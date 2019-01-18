@@ -9,13 +9,6 @@ public class Calculator {
 
 	public static final int DEFAULT_DAMAGE = 1;
 
-	public static double calc(Item item, Collection<Item> items){
-		if(item == null && (items == null || items.isEmpty()))
-			return 1;
-		items.add(item);
-		return calc(items.toArray(new Item[0]));
-	}
-
 	public static double calc(Item... items) {
 		if (items == null || items.length == 0)
 			return 1;
