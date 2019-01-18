@@ -19,7 +19,7 @@ public class Entrance {
     static void calc() {
         List<Item> XiaZi = new ArrayList<>();
         XiaZi.add(Item.NEW().setAttr(AttrType.Inte, 1057, AttrType.Stre, 13, AttrType.Inde, 990 + 471, AttrType.CritLeval, 85));
-//        XiaZi.add(Item.NEW().setAttr(AttrType.Inte, 230, AttrType.Stre, 96, AttrType.Inde, 42));
+        XiaZi.add(Item.NEW().setAttr(AttrType.Inte, 75 + 40 * 2 + 30 + 40, AttrType.Stre, 18 * 3 + 12 + 10 + 15, AttrType.Inde, 42));
 
         List<Item> role = new ArrayList<>();
         role.addAll(XiaZi);
@@ -27,26 +27,29 @@ public class Entrance {
         role.add(ChengHao.LongZhiTiaoZhan);
 
         Nodes.NEW()
-                .addNode("哈林板_海伯伦光_梦", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getHaiBoLunGuang()).add(getMeng()))
-                .addNode("哈林板_海伯伦暗_梦", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getHaiBoLunAn()).add(getMeng()))
-                .addNode("苍穹板_海伯伦光_梦", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getHaiBoLunGuang()).add(getMeng()))
-                .addNode("苍穹板_海伯伦暗_梦", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getHaiBoLunAn()).add(getMeng()))
+//                .addNode("苍穹板_梦_海博伦光", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getHaiBoLunGuang()).add(getMeng()))
+//                .addNode("苍穹板_梦_海博伦暗", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getHaiBoLunAn()).add(getMeng()))
+                .addNode("哈林板_梦_海博伦光", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getHaiBoLunGuang()).add(getMeng()))
+                .addNode("哈林板_梦_海博伦暗", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getHaiBoLunAn()).add(getMeng()))
+                .addNode("七宗罪_梦_海博伦光", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunGuang()).add(getMeng()))
+                .addNode("七宗罪_梦_海博伦暗", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunAn()).add(getMeng()))
+                .addNode("超大陆_梦_海博伦光", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getHaiBoLunGuang()).add(getMeng()))
+                .addNode("超大陆_梦_海博伦暗", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getHaiBoLunAn()).add(getMeng()))
+                .addNode("万世_梦_海博伦光", ItemHolder.NEW().add(role).add(getWanShi()).add(getHaiBoLunGuang()).add(getMeng()))
+                .addNode("万世_梦_海博伦暗", ItemHolder.NEW().add(role).add(getWanShi()).add(getHaiBoLunAn()).add(getMeng()))
 
-                .addNode("超大陆_海伯伦光_梦", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getHaiBoLunGuang()).add(getMeng()))
-                .addNode("超大陆_海伯伦暗_梦", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getHaiBoLunAn()).add(getMeng()))
-                .addNode("七宗罪_海伯伦光_梦", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunGuang()).add(getMeng()))
-                .addNode("七宗罪_海伯伦暗_梦", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunAn()).add(getMeng()))
+//                .addNode("苍穹板_梦_虚幻", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getXuHuan()).add(getMeng()))
+                .addNode("哈林板_梦_虚幻", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getXuHuan()).add(getMeng()))
+                .addNode("七宗罪_梦_虚幻", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getXuHuan()).add(getMeng()))
+                .addNode("超大陆_梦_虚幻", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getXuHuan()).add(getMeng()))
+                .addNode("万世_梦_虚幻", ItemHolder.NEW().add(role).add(getWanShi()).add(getXuHuan()).add(getMeng()))
 
-                .addNode("哈林板_虚幻_梦", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getXuHuan()).add(getMeng()))
-                .addNode("苍穹板_虚幻_梦", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getXuHuan()).add(getMeng()))
-                .addNode("超大陆_虚幻_梦", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getXuHuan()).add(getMeng()))
-                .addNode("七宗罪_虚幻_梦", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getXuHuan()).add(getMeng()))
                 .sort()
                 .print();
 
     }
 
-    static List<Item> getCangQiongQing(){
+    static List<Item> getCangQiongQing() {
         List<Item> list = new ArrayList<>();
         list.add(ZhuangBei.Xiong.CangQiongQing);
         list.add(ZhuangBei.Tui.CangQiongQing);
@@ -57,7 +60,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getCangQiongBan(){
+    static List<Item> getCangQiongBan() {
         List<Item> list = new ArrayList<>();
         list.add(ZhuangBei.Xiong.CangQiongBan);
         list.add(ZhuangBei.Tui.CangQiongBan);
@@ -69,7 +72,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getHaLinQing(){
+    static List<Item> getHaLinQing() {
         List<Item> list = new ArrayList<>();
         list.add(ZhuangBei.Xiong.HaLinQing);
         list.add(ZhuangBei.Tui.HaLinQing);
@@ -80,7 +83,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getHaLinBan(){
+    static List<Item> getHaLinBan() {
         List<Item> list = new ArrayList<>();
         list.add(ZhuangBei.Xiong.HaLinBan);
         list.add(ZhuangBei.Tui.HaLinBan);
@@ -92,7 +95,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getSanCao(){
+    static List<Item> getSanCao() {
         List<Item> list = new ArrayList<>();
         list.add(SanCao.Zuo.HuangJinBei);
         list.add(SanCao.You.HeiBai);
@@ -100,7 +103,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getShouShi(){
+    static List<Item> getShouShi() {
         List<Item> list = new ArrayList<>();
         list.add(ShouShi.XiangLian.YinYun);
         list.add(ShouShi.JieZhi.WuJin);
@@ -108,7 +111,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getXuHuan(){
+    static List<Item> getXuHuan() {
         List<Item> list = new ArrayList<>();
         list.add(SanCao.Zuo.XuHuan);
         list.add(SanCao.You.XuHuan);
@@ -117,7 +120,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getZhengYi(){
+    static List<Item> getZhengYi() {
         List<Item> list = new ArrayList<>();
         list.add(SanCao.Zuo.ZhengYi);
         list.add(SanCao.You.ZhengYi);
@@ -126,7 +129,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getXianZhe(){
+    static List<Item> getXianZhe() {
         List<Item> list = new ArrayList<>();
         list.add(ShouShi.XiangLian.XianZhe);
         list.add(ShouShi.JieZhi.XianZhe);
@@ -135,7 +138,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getMeng(){
+    static List<Item> getMeng() {
         List<Item> list = new ArrayList<>();
         list.add(ShouShi.XiangLian.Meng);
         list.add(ShouShi.JieZhi.Meng);
@@ -144,7 +147,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getHaiBoLunGuang(){
+    static List<Item> getHaiBoLunGuang() {
         List<Item> list = new ArrayList<>();
         list.add(SanCao.Zuo.HaiBoLun);
         list.add(SanCao.You.HaiBoLun);
@@ -153,7 +156,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getHaiBoLunAn(){
+    static List<Item> getHaiBoLunAn() {
         List<Item> list = new ArrayList<>();
         list.add(SanCao.Zuo.HaiBoLun);
         list.add(SanCao.You.HaiBoLun);
@@ -162,7 +165,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getMoZhan(){
+    static List<Item> getMoZhan() {
         List<Item> list = new ArrayList<>();
         list.add(ZhuangBei.Xiong.MoZhan);
         list.add(ZhuangBei.Tui.MoZhan);
@@ -170,10 +173,11 @@ public class Entrance {
         list.add(ZhuangBei.Yao.MoZhan);
         list.add(ZhuangBei.Xie.MoZhan);
         list.add(Suit.MoZhan);
+        list.add(Item.NEW().setAttr(AttrType.Inte, 200));
         return list;
     }
 
-    static List<Item> getWanShi(){
+    static List<Item> getWanShi() {
         List<Item> list = new ArrayList<>();
         list.add(ZhuangBei.Xiong.WanShi);
         list.add(ZhuangBei.Tui.WanShi);
@@ -184,7 +188,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getChaoDaLu(){
+    static List<Item> getChaoDaLu() {
         List<Item> list = new ArrayList<>();
         list.add(ZhuangBei.Xiong.ChaoDaLu);
         list.add(ZhuangBei.Tui.ChaoDaLu);
@@ -196,7 +200,7 @@ public class Entrance {
         return list;
     }
 
-    static List<Item> getQiZongZui(){
+    static List<Item> getQiZongZui() {
         List<Item> list = new ArrayList<>();
         list.add(ZhuangBei.Xiong.QiZongZui);
         list.add(ZhuangBei.Tui.QiZongZui);

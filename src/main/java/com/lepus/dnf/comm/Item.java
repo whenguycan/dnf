@@ -79,7 +79,7 @@ public class Item {
         return this;
     }
 
-    public Item addAttr(AttrType type, int attr) {
+    private Item addAttr(AttrType type, int attr) {
         attrMap.put(type, attrMap.get(type) + attr);
         return this;
     }
