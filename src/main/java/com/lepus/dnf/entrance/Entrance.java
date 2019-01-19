@@ -19,7 +19,8 @@ public class Entrance {
     static void calc() {
         List<Item> XiaZi = new ArrayList<>();
         XiaZi.add(Item.NEW().setAttr(AttrType.Inte, 1057, AttrType.Stre, 13, AttrType.Inde, 990 + 471, AttrType.CritLeval, 85));
-        XiaZi.add(Item.NEW().setAttr(AttrType.Inte, 75 + 40 * 2 + 30 + 40, AttrType.Stre, 18 * 3 + 12 + 10 + 15, AttrType.Inde, 42));
+        XiaZi.add(Item.NEW().setAttr(AttrType.Inte, 25 * 3, AttrType.Stre, 9 * 3 + 10 + 15));
+//        XiaZi.add(Item.NEW().setAttr(AttrType.Inte, 40 * 3 + 75 + 30 + 23 * 12, AttrType.Stre, 18 * 3 + 10 + 15, AttrType.Inde, 42));
 
         List<Item> role = new ArrayList<>();
         role.addAll(XiaZi);
@@ -27,22 +28,22 @@ public class Entrance {
         role.add(ChengHao.LongZhiTiaoZhan);
 
         Nodes.NEW()
-//                .addNode("苍穹板_梦_海博伦光", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getHaiBoLunGuang()).add(getMeng()))
-//                .addNode("苍穹板_梦_海博伦暗", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getHaiBoLunAn()).add(getMeng()))
+                .addNode("苍穹板_梦_海博伦光", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getHaiBoLunGuang()).add(getMeng()))
+                .addNode("苍穹板_梦_海博伦暗", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getHaiBoLunAn()).add(getMeng()))
                 .addNode("哈林板_梦_海博伦光", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getHaiBoLunGuang()).add(getMeng()))
                 .addNode("哈林板_梦_海博伦暗", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getHaiBoLunAn()).add(getMeng()))
                 .addNode("七宗罪_梦_海博伦光", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunGuang()).add(getMeng()))
                 .addNode("七宗罪_梦_海博伦暗", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunAn()).add(getMeng()))
                 .addNode("超大陆_梦_海博伦光", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getHaiBoLunGuang()).add(getMeng()))
                 .addNode("超大陆_梦_海博伦暗", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getHaiBoLunAn()).add(getMeng()))
-                .addNode("万世_梦_海博伦光", ItemHolder.NEW().add(role).add(getWanShi()).add(getHaiBoLunGuang()).add(getMeng()))
-                .addNode("万世_梦_海博伦暗", ItemHolder.NEW().add(role).add(getWanShi()).add(getHaiBoLunAn()).add(getMeng()))
+//                .addNode("万世_梦_海博伦光", ItemHolder.NEW().add(role).add(getWanShi()).add(getHaiBoLunGuang()).add(getMeng()))
+//                .addNode("万世_梦_海博伦暗", ItemHolder.NEW().add(role).add(getWanShi()).add(getHaiBoLunAn()).add(getMeng()))
 
-//                .addNode("苍穹板_梦_虚幻", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getXuHuan()).add(getMeng()))
+                .addNode("苍穹板_梦_虚幻", ItemHolder.NEW().add(role).add(getCangQiongBan()).add(getXuHuan()).add(getMeng()))
                 .addNode("哈林板_梦_虚幻", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getXuHuan()).add(getMeng()))
                 .addNode("七宗罪_梦_虚幻", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getXuHuan()).add(getMeng()))
                 .addNode("超大陆_梦_虚幻", ItemHolder.NEW().add(role).add(getChaoDaLu()).add(getXuHuan()).add(getMeng()))
-                .addNode("万世_梦_虚幻", ItemHolder.NEW().add(role).add(getWanShi()).add(getXuHuan()).add(getMeng()))
+//                .addNode("万世_梦_虚幻", ItemHolder.NEW().add(role).add(getWanShi()).add(getXuHuan()).add(getMeng()))
 
                 .sort()
                 .print();
