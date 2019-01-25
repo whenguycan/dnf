@@ -97,6 +97,12 @@ public class Item {
         return this.name;
     }
 
+    public Item reduce(int power){
+        for(Map.Entry<AttrType, Integer> entry : this.attrMap.entrySet())
+            entry.setValue(entry.getValue() / power);
+        return this;
+    }
+
     public void show() {
         for (AttrType type : AttrType.values()) {
             String name = type.name();

@@ -3,6 +3,7 @@ package com.lepus.dnf.comm;
 import com.lepus.dnf.calc.Calculator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Nodes {
@@ -14,11 +15,13 @@ public class Nodes {
 	static class Node{
 		String name;
 		double damage;
-		ItemHolder holder;
-		Node(String name, ItemHolder holder){
+		ItemHolder[] holders;
+		Node(String name, ItemHolder... holders){
 			this.name = name;
-			this.holder = holder;
-			this.damage = Calculator.calc(holder.getArray());
+			this.holders = holders;
+			for(ItemHolder holder : holders)
+				this.damage += Calculator.calc(holder.getArray());
+			this.damage /= holders.length;
 		}
 	}
 
@@ -31,8 +34,8 @@ public class Nodes {
 		return this;
 	}
 
-	public Nodes addNode(String name, ItemHolder holder){
-		list.add(new Node(name, holder));
+	public Nodes addNode(String name, ItemHolder... holders){
+		list.add(new Node(name, holders));
 		return this;
 	}
 
@@ -46,8 +49,12 @@ public class Nodes {
 			System.out.println("empty");
 		else
 			for(Node node : list){
-				if(printItemDetail)
-					Item.sum(node.holder.items).show();
+				if(printItemDetail) {
+					List<Item> all = new ArrayList<>();
+					for(ItemHolder holder : node.holders)
+						all.addAll(holder.items);
+					Item.sum(all).reduce(node.holders.length).show();
+				}
 				System.out.println(node.name + ": " + node.damage);
 			}
 	}

@@ -21,5 +21,6 @@ public interface Suit {
 	Item HaLinBan = Item.NEW().setAttr(AttrType.Thre, 24, AttrType.CritAdd, 40);
 	Item CangQiongQing = Item.NEW().setAttr(AttrType.Fina, 20, AttrType.WhitAdd, 30);
 	Item CangQiongBan = Item.NEW().setAttr(AttrType.Stre, 20, AttrType.Fina, 20, AttrType.WhitAdd, 30);
+	Item JiangShan = Item.NEW().setAttr(AttrType.Skil, 10, AttrType.Whit, 20);
 
 }
