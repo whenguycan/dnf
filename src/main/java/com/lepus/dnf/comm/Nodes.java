@@ -5,6 +5,7 @@ import com.lepus.dnf.calc.Calculator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Nodes {
 
@@ -47,7 +48,8 @@ public class Nodes {
 	public void print(){
 		if(list.isEmpty())
 			System.out.println("empty");
-		else
+		else {
+			int floor = (int) Math.floor(list.get(list.size() - 1).damage);
 			for(Node node : list){
 				if(printItemDetail) {
 					List<Item> all = new ArrayList<>();
@@ -55,8 +57,11 @@ public class Nodes {
 						all.addAll(holder.items);
 					Item.sum(all).reduce(node.holders.length).show();
 				}
-				System.out.println(node.name + ": " + node.damage);
+				int damage = (int) Math.floor(node.damage);
+				String percent = String.format("%.3f%%", (damage * 1d / floor) * 100);
+				System.out.println(node.name + ": " + damage + ": " + percent);
 			}
+		}
 	}
 
 }

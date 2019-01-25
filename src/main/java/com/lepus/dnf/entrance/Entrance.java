@@ -45,7 +45,7 @@ public class Entrance {
                 .addNode("哈林板_梦_虚幻", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getXuHuan()).add(getMeng()))
                 .addNode("七宗罪_梦_虚幻", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getXuHuan()).add(getMeng()))
 
-//                .addNode("魔战_现有", ItemHolder.NEW().add(role).add(getMoZhan()).add(getShouShi()).add(getSanCao()))
+                .addNode("魔战_现有", ItemHolder.NEW().add(role).add(getMoZhan()).add(getShouShi()).add(getSanCao()))
                 .sort()
                 .print();
 
