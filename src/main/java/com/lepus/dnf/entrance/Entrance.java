@@ -18,7 +18,8 @@ public class Entrance {
 
     static void calc() {
         List<Item> XiaZi = new ArrayList<>();
-        XiaZi.add(Item.NEW().setAttr(AttrType.Inte, 1311, AttrType.Stre, 42, AttrType.Inde, 990 + 471, AttrType.CritLeval, 85));
+        XiaZi.add(Item.NEW().setAttr(AttrType.Inte, 1644, AttrType.Stre, 51, AttrType.Inde, 1073 + 471, AttrType.CritLeval, 92));
+        XiaZi.add(Item.NEW().setAttr(AttrType.Inde, 40, AttrType.Stre, 15));
 
         Item DaZao = Item.NEW().setAttr(AttrType.Inte, 25 * 3, AttrType.Stre, 9 * 3);   // 垃圾打造
 //        Item DaZao = Item.NEW().setAttr(AttrType.Inte, 40 * 3 + 75 + 30 + 26 * 2, AttrType.Stre, 15 * 3 + 12, AttrType.Inde, 42 + 45);   // 凑和打造
@@ -37,15 +38,19 @@ public class Entrance {
 
 //                .addNode("哈林板_江山_海博伦", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getHaiBoLunGuang()).add(getJiangShan()), ItemHolder.NEW().add(role).add(getHaLinBan()).add(getHaiBoLunAn()).add(getJiangShan()))
 //                .addNode("七宗罪_江山_海博伦", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunGuang()).add(getJiangShan()), ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunAn()).add(getJiangShan()))
+//                .addNode("哈林轻_梦_海博伦", ItemHolder.NEW().add(role).add(getHaLinQing()).add(getHaiBoLunGuang()).add(getMeng()), ItemHolder.NEW().add(role).add(getHaLinQing()).add(getHaiBoLunAn()).add(getMeng()))
                 .addNode("哈林板_梦_海博伦", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getHaiBoLunGuang()).add(getMeng()), ItemHolder.NEW().add(role).add(getHaLinBan()).add(getHaiBoLunAn()).add(getMeng()))
+                .addNode("哈林皮_梦_海博伦", ItemHolder.NEW().add(role).add(getHaLinPi()).add(getHaiBoLunGuang()).add(getMeng()), ItemHolder.NEW().add(role).add(getHaLinPi()).add(getHaiBoLunAn()).add(getMeng()))
                 .addNode("七宗罪_梦_海博伦", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunGuang()).add(getMeng()), ItemHolder.NEW().add(role).add(getQiZongZui()).add(getHaiBoLunAn()).add(getMeng()))
 
 //                .addNode("哈林板_江山_虚幻", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getXuHuan()).add(getJiangShan()))
 //                .addNode("七宗罪_江山_虚幻", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getXuHuan()).add(getJiangShan()))
+//                .addNode("哈林轻_梦_虚幻", ItemHolder.NEW().add(role).add(getHaLinQing()).add(getXuHuan()).add(getMeng()))
                 .addNode("哈林板_梦_虚幻", ItemHolder.NEW().add(role).add(getHaLinBan()).add(getXuHuan()).add(getMeng()))
+                .addNode("哈林皮_梦_虚幻", ItemHolder.NEW().add(role).add(getHaLinPi()).add(getXuHuan()).add(getMeng()))
                 .addNode("七宗罪_梦_虚幻", ItemHolder.NEW().add(role).add(getQiZongZui()).add(getXuHuan()).add(getMeng()))
 
-                .addNode("魔战_现有", ItemHolder.NEW().add(role).add(getMoZhan()).add(getShouShi()).add(getSanCao()))
+//                .addNode("魔战_现有", ItemHolder.NEW().add(role).add(getMoZhan()).add(getShouShi()).add(getSanCao()))
                 .sort()
                 .print();
 
@@ -82,6 +87,7 @@ public class Entrance {
         list.add(ZhuangBei.Yao.HaLinQing);
         list.add(ZhuangBei.Xie.HaLinQing);
         list.add(Suit.HaLinQing);
+        list.add(Item.NEW().setAttr(AttrType.Inte, 200));
         return list;
     }
 
@@ -97,10 +103,22 @@ public class Entrance {
         return list;
     }
 
+    static List<Item> getHaLinPi() {
+        List<Item> list = new ArrayList<>();
+        list.add(ZhuangBei.Xiong.HaLinPi);
+        list.add(ZhuangBei.Tui.HaLinPi);
+        list.add(ZhuangBei.Jian.HaLinPi);
+        list.add(ZhuangBei.Yao.HaLinPi);
+        list.add(ZhuangBei.Xie.HaLinPi);
+        list.add(Suit.HaLinPi);
+        list.add(Item.NEW().setAttr(AttrType.Inte, 200));
+        return list;
+    }
+
     static List<Item> getSanCao() {
         List<Item> list = new ArrayList<>();
         list.add(SanCao.Zuo.HuangJinBei);
-        list.add(SanCao.You.HeiBai);
+        list.add(SanCao.You.XuHuan);
         list.add(SanCao.ErHuan.HaiBoLun);
         return list;
     }

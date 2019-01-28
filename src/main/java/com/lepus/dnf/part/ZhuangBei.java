@@ -13,6 +13,7 @@ public interface ZhuangBei {
 		Item QiZongZui = Item.NEW().setAttr(AttrType.Inte, 45, AttrType.IntePrec, 15);
 		Item HaLinQing = Item.NEW().setAttr(AttrType.Inte, 37, AttrType.IntePrec, 17);
 		Item HaLinBan = Item.NEW().setAttr(AttrType.Inte, 46, AttrType.Stre, 22, AttrType.Whit, 10);
+		Item HaLinPi = Item.NEW().setAttr(AttrType.Inte, 46, AttrType.YellAdd, 11);
 		Item CangQiongQing = Item.NEW().setAttr(AttrType.Inte, 37, AttrType.YellAdd, 14);
 		Item CangQiongBan = Item.NEW().setAttr(AttrType.Inte, 46, AttrType.CritAdd, 14);
 
@@ -26,6 +27,7 @@ public interface ZhuangBei {
 		Item QiZongZui = Item.NEW().setAttr(AttrType.Inte, 45, AttrType.Thre, 17);
 		Item HaLinQing = Item.NEW().setAttr(AttrType.Inte, 37, AttrType.Thre, 17);
 		Item HaLinBan = Item.NEW().setAttr(AttrType.Inte, 46, AttrType.Stre, 22, AttrType.Whit, 10);
+		Item HaLinPi = Item.NEW().setAttr(AttrType.Inte, 46, AttrType.CritAdd, 11);
 		Item CangQiongQing = Item.NEW().setAttr(AttrType.Inte, 37, AttrType.CritAdd, 14);
 		Item CangQiongBan = Item.NEW().setAttr(AttrType.Inte, 46, AttrType.Stre, 16, AttrType.Thre, 13);
 
@@ -39,6 +41,7 @@ public interface ZhuangBei {
 		Item QiZongZui = Item.NEW().setAttr(AttrType.Inte, 35, AttrType.Whit, 15);
 		Item HaLinQing = Item.NEW().setAttr(AttrType.Inte, 30, AttrType.Thre, 16);
 		Item HaLinBan = Item.NEW().setAttr(AttrType.Inte, 37, AttrType.Inde, 100, AttrType.IntePrec, 10);
+		Item HaLinPi = Item.NEW().setAttr(AttrType.Inte, 37, AttrType.Stre, 16, AttrType.YellAdd, 11);
 		Item CangQiongQing = Item.NEW().setAttr(AttrType.Inte, 30, AttrType.Skil, 14);
 		Item CangQiongBan = Item.NEW().setAttr(AttrType.Inte, 37, AttrType.Skil, 12);
 
@@ -52,6 +55,7 @@ public interface ZhuangBei {
 		Item QiZongZui = Item.NEW().setAttr(AttrType.Inte, 26, AttrType.Fina, 17);
 		Item HaLinQing = Item.NEW().setAttr(AttrType.Inte, 22, AttrType.Inde, 50, AttrType.IntePrec, 13);
 		Item HaLinBan = Item.NEW().setAttr(AttrType.Inte, 28, AttrType.Stre, 18, AttrType.IntePrec, 10);
+		Item HaLinPi = Item.NEW().setAttr(AttrType.Inte, 28, AttrType.YellAdd, 11);
 		Item CangQiongQing = Item.NEW().setAttr(AttrType.Inte, 22, AttrType.Thre, 15);
 		Item CangQiongBan = Item.NEW().setAttr(AttrType.Inte, 28, AttrType.Stre, 14, AttrType.IntePrec, 13);
 
@@ -65,6 +69,7 @@ public interface ZhuangBei {
 		Item QiZongZui = Item.NEW().setAttr(AttrType.Inte, 26, AttrType.YellAdd, 15);
 		Item HaLinQing = Item.NEW().setAttr(AttrType.Inte, 22, AttrType.Inde, 50, AttrType.IntePrec, 13);
 		Item HaLinBan = Item.NEW().setAttr(AttrType.Inte, 28, AttrType.Stre, 18, AttrType.IntePrec, 10);
+		Item HaLinPi = Item.NEW().setAttr(AttrType.Inte, 28, AttrType.Stre, 14, AttrType.YellAdd, 11);
 		Item CangQiongQing = Item.NEW().setAttr(AttrType.Inte, 22, AttrType.Stre, 30);
 		Item CangQiongBan = Item.NEW().setAttr(AttrType.Inte, 28, AttrType.Whit, 14);
 
